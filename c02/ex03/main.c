@@ -5,10 +5,10 @@ int	ft_str_is_numeric(char *str);
 
 int	main(void)
 {
-	char *str1;
-	char *str2;
-	char *str3;
-	char *str4;
+	char	*str1;
+	char	*str2;
+	char	*str3;
+	char	*str4;
 
 	str1 = calloc(10, sizeof(char));
 	str2 = calloc(10, sizeof(char));

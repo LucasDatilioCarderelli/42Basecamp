@@ -1,4 +1,16 @@
-char *ft_strcpy(char *dest, char *src)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/30 02:18:05 by ldatilio          #+#    #+#             */
+/*   Updated: 2021/07/30 02:18:06 by ldatilio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -8,5 +20,6 @@ char *ft_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
