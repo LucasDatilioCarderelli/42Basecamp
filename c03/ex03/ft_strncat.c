@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 02:18:58 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/07/30 02:18:59 by ldatilio         ###   ########.fr       */
+/*   Created: 2021/07/30 13:51:24 by ldatilio          #+#    #+#             */
+/*   Updated: 2021/07/30 13:56:40 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	int				c;
+	unsigned int	i;
+
+	c = ft_strlen(dest);
+	i = 0;
+	while (src[i] != '\0' && i < nb)
 	{
-		
+		dest[c + i] = src[i];
+		i++;
 	}
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] = str[i] + 32;
-	i = -1;
-	while (str[++i] != 0)
-		if ((str[i] >= 'a' && str[i] <= 'z') \
-		&& (!((str[i - 1] >= 'a' && str[i - 1] <= 'z') \
-		|| (str[i - 1] >= '0' && str[i - 1] <= '9') \
-		|| (str[i - 1] >= 'A' && str[i - 1] <= 'Z'))))
-			str[i] = str[i] - 32;
-	return (str);
+	dest[c + i] = '\0';
+	return (dest);
 }

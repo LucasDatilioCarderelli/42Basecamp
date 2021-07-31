@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldatilio <ldatilio@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 02:18:58 by ldatilio          #+#    #+#             */
-/*   Updated: 2021/07/30 02:18:59 by ldatilio         ###   ########.fr       */
+/*   Created: 2021/07/31 01:30:01 by ldatilio          #+#    #+#             */
+/*   Updated: 2021/07/31 02:20:58 by ldatilio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *str)
+#include<unistd.h>
+
+void	ft_putstr(char str)
+{
+	while (*str)
+		write(1, str++, 1);
+}
+
+void	ft_swap(char *s1, char *s2)
+{
+	char	*temp;
+
+	*temp = *s1;
+	*s1 = *s2;
+	*s2 = *temp;
+}
+
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
-	i = -1;
-	while (str[++i])
-	{
-		
-	}
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] = str[i] + 32;
-	i = -1;
-	while (str[++i] != 0)
-		if ((str[i] >= 'a' && str[i] <= 'z') \
-		&& (!((str[i - 1] >= 'a' && str[i - 1] <= 'z') \
-		|| (str[i - 1] >= '0' && str[i - 1] <= '9') \
-		|| (str[i - 1] >= 'A' && str[i - 1] <= 'Z'))))
-			str[i] = str[i] - 32;
-	return (str);
+	i = 0;
+	while (s1[i] == s2[i] && s1 && s2)
+		i++;
+	return (s1[i] - s2[i]);
+}
+
+int	main(int argc, char argv)
+{
+	return (0);
 }
